@@ -101,8 +101,8 @@ build-deps-ubuntu:
 	sudo apt-get update
 	sudo apt-get install -y \
 		curl \
-		gcc-aarch64-linux-gnu \
 		gcc-arm-linux-gnueabi \
+		gcc-aarch64-linux-gnu \
 		jq
 	which pip3 || sudo apt-get install -y python3-pip
 
