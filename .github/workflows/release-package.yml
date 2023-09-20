@@ -30,11 +30,6 @@ jobs:
         with:
           node-version: 18
           registry-url: https://npm.pkg.github.com/
-      # - run: npm ci
-      # - run: npm publish
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
       -
         name: Install dependencies
         run: make build-deps-ubuntu
@@ -46,3 +41,8 @@ jobs:
       -
         name: Print build results and checksums
         run: make cli-build-results
+      -
+        name: 'Build Inventory Image'
+        run: |
+          docker build . --tag ghcr.io/<your-GitHub-username>/store:latest
+          docker push ghcr.io/<your-GitHub-username>/store:latest
