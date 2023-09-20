@@ -11,7 +11,7 @@
 # - iOS push notifications for self-hosted servers (to calculate the Firebase poll_request topic)
 # - Matrix Push Gateway (to validate that the pushkey is correct)
 #
-# base-url:
+ base-url: http://192.168.33.243
 
 # Listen address for the HTTP & HTTPS web server. If "listen-https" is set, you must also
 # set "key-file" and "cert-file". Format: [<ip>]:<port>, e.g. "1.2.3.4:8080".
@@ -68,11 +68,11 @@
 #   If you are running ntfy with systemd, make sure this cache file is owned by the
 #   ntfy user and group by running: chown ntfy.ntfy <filename>.
 #
-# cache-file: <filename>
-# cache-duration: "12h"
+ cache-file: /var/cache/ntfy/cache.db
+ cache-duration: "12h"
 # cache-startup-queries:
-# cache-batch-size: 0
-# cache-batch-timeout: "0ms"
+ cache-batch-size: 0
+ cache-batch-timeout: "0ms"
 
 # If set, access to the ntfy server and API can be controlled on a granular level using
 # the 'ntfy user' and 'ntfy access' commands. See the --help pages for details, or check the docs.
@@ -223,7 +223,7 @@
 #
 # iOS users:
 #   If you use the iOS ntfy app, you MUST configure this to receive timely notifications. You'll like want this:
-#   upstream-base-url: "https://ntfy.sh"
+   upstream-base-url: "https://ntfy.sh"
 #
 # If set, all incoming messages will publish a "poll_request" message to the configured upstream server, containing
 # the message ID of the original message, instructing the iOS app to poll this server for the actual message contents.
@@ -357,7 +357,7 @@
 #      - "visitor_ip=1.2.3.4 -> debug"
 #      - "time_taken_ms -> debug"
 #
-# log-level: info
+ log-level: info
 # log-level-overrides:
-# log-format: text
-# log-file:
+ log-format: text
+ log-file: /var/log/ntfy.log
