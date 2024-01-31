@@ -22,15 +22,15 @@ jobs:
       -
         name: Build docs
         run: make docs
-      -
-        name: Copy generated docs
-        run: rsync -av --exclude CNAME --delete server/docs/ build/ntfy-docs.github.io/docs/
-      -
-        name: Publish docs
-        run: |
-          cd build/ntfy-docs.github.io
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<actions@github.com>"          
-          git add docs/
-          git commit -m "Updated docs"
-          git push origin main
+      # -
+      #   name: Copy generated docs
+      #   run: rsync -av --exclude CNAME --delete server/docs/ build/ntfy-docs.github.io/docs/
+      # -
+      #   name: Publish docs
+      #   run: |
+      #     cd build/ntfy-docs.github.io
+      #     git config user.name "GitHub Actions Bot"
+      #     git config user.email "<actions@github.com>"          
+      #     git add docs/
+      #     git commit -m "Updated docs"
+      #     git push origin main
