@@ -347,9 +347,9 @@
 #   ntfy user and group by running: chown ntfy.ntfy <filename>.
 #
 # Example (good for production):
-  log-level: debug
+#   log-level: info
 #   log-format: json
-  log-file: /var/log/ntfy.log
+#   log-file: /var/log/ntfy.log
 #
 # Example level overrides (for debugging, only use temporarily):
 #   log-level-overrides:
@@ -357,7 +357,7 @@
 #      - "visitor_ip=1.2.3.4 -> debug"
 #      - "time_taken_ms -> debug"
 #
-# log-level: info
+log-level: debug
 # log-level-overrides:
 # log-format: text
 # log-file:
